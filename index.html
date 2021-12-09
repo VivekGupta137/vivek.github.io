@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vivek Gupta</title>
+    <link rel="stylesheet" href="https://js-dos.com/v7/build/releases/latest/js-dos/js-dos.css">
+</head>
+<body>
+
+    <div id="app"></div>
+    <div class="my__cursor"></div>
+    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" class="svg-filters">
+        <defs>
+            <filter id="filter">
+            <feTurbulence type="fractalNoise" baseFrequency="0.00001 0.00001" numOctaves="1" result="warp"></feTurbulence>
+            <feDisplacementMap xChannelSelector="R" yChannelSelector="G" scale="30" in="SourceGraphic" in2="warpOffset" />
+            </filter>
+        </defs>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" class="svg-filters">
+        <defs>
+            <filter id="filter-goo-2">
+                <feGaussianBlur in="SourceGraphic" stdDeviation="7" result="blur" />
+                <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9" result="goo" />
+                <feComposite in="SourceGraphic" in2="goo" />
+            </filter>
+        </defs>
+    </svg>
+    <script src="bundle.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="cursor.js"></script>
+</body>
+</html>
